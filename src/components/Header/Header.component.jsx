@@ -1,8 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Header = ({text}) => {
-    return (<header>
+const Header = ({text, bgColor, textColor}) => {
+    const headerStyles = {
+        backgroundColor: bgColor,
+        color: textColor
+    }
+    return (<header style={headerStyles}>
         <div className='container'>
             <h2>{text}</h2>
         </div>
@@ -10,7 +14,9 @@ const Header = ({text}) => {
 }
 
 Header.defaultProps = {
-    text: 'CRITIQLY - Feedback on Steriods!'
+    text: 'CRITIQLY - Feedback on Steriods!',
+    bgColor: 'rgba(0,0,0,0.4)',
+    textColor: '#ff6a95'
 }
 
 Header.propTypes = {
