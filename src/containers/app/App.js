@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import Header from '../../components/Header/Header.component';
 import FeedBackList from '../../components/FeedBackList/FeedBackList.component';
+import FeedBackStats from '../../components/FeedBackStats/FeedBackStats.component';
 
 import {data } from '../../data/feedback.data'
 
@@ -17,6 +18,7 @@ const deleteFeedback = id => {
 		<>
 			<Header />{' '}
 			<div className='container'>
+				<FeedBackStats feedback={feedback}/>
 				<FeedBackList feedback={feedback} handleDelete={deleteFeedback} />
 			</div>
 		</>
