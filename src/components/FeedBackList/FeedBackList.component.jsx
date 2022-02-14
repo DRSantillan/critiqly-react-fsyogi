@@ -4,11 +4,12 @@ import { useContext } from 'react';
 import FeedBackContext from '../../context/FeedBack/FeedBack.context';
 import FeedBackItem from '../FeedBackItem/FeedBackItem.component';
 import { motion, AnimatePresence } from 'framer-motion';
+import Spinner from '../Spinner/Spinner.component';
 
 const FeedBackList = () => {
-	const { feedback } = useContext(FeedBackContext);
-	if (!feedback || feedback.length === 0) return <p>No Feedback yet...</p>;
-	return (
+	const { feedback, isLoading } = useContext(FeedBackContext);
+	if (!isLoading && (!feedback || feedback.length === 0)) return <p>No Feedback yet...</p>;
+	return isLoading ? (<Spinner/>) : (
 		<div className='feedback-list'>
 			<AnimatePresence>
 				{feedback.map(({ id, text, rating }) => (

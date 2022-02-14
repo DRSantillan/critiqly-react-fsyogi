@@ -10,7 +10,7 @@ const FeedBackItem = ({ id, rating, text }) => {
 	const { deleteFeedback, editFeedback } = useContext(FeedBackContext);
 	return (
 		<Card>
-			<div className='num-display'>{rating}</div>
+			<div className='num-display'>{Number(rating)}</div>
 			<button onClick={() => deleteFeedback(id)} className='close'>
 				<FaTimes color='purple' />
 			</button>
