@@ -1,1 +1,0 @@
-# critiqly-react-fsyogi
